@@ -1,4 +1,4 @@
-package com.company.dao.AdminDaoImpl;
+package com.company.dao.Impl;
 
 import com.company.dao.AdminDao;
 import com.company.domain.Admin;

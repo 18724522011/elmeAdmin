@@ -1,7 +1,7 @@
 package com.company.Test;
 
 import com.company.dao.AdminDao;
-import com.company.dao.AdminDaoImpl.AdminDaoImpl;
+import com.company.dao.Impl.AdminDaoImpl;
 import com.company.domain.Admin;
 
 public class TestAdmin{
