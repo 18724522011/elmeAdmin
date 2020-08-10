@@ -12,4 +12,7 @@ public interface BusinessDao
     public int removeBusiness(int businessId);
 
     public Business getBusinessByNameByPass(Integer businessId, String password);
+    public Business getBusinessByBusinessId(Integer businessId);
+    public int updateBusiness( Business business);
+
 }
