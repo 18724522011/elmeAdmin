@@ -53,17 +53,12 @@ public class FoodDaoImpl implements FoodDao
         try {
             conn = JDBCUtils.getConnection();
             pstmt = conn.prepareStatement(sql);
-            // 可以在prepareStatement中设置返回自增长列的值
             pstmt = conn.prepareStatement(sql);
             pstmt.setString(1, food.getFoodName());
             pstmt.setString(2, food.getFoodExplain());
             pstmt.setDouble(3, food.getFoodPrice());
             pstmt.setInt(4, food.getBusinessId());
             result = pstmt.executeUpdate();
-
-            // 获取自增长的列
-
-
 
         } catch (SQLException e) {
             e.printStackTrace();

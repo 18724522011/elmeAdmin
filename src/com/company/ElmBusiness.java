@@ -7,6 +7,7 @@ import com.company.view.BusinessView;
 import com.company.view.FoodView;
 import com.company.view.impl.AdminViewImpl;
 import com.company.view.impl.BusinessViewImpl;
+import com.company.view.impl.FoodViewImpl;
 
 import java.util.Scanner;
 
@@ -48,7 +49,7 @@ public class ElmBusiness
                         businessView.saveBusiness();
                         break;
                     case 4:
-                        businessView.removeBusiness();
+                        foodManage(business.getBusinessId());
                         break;
                     case 5:
                         System.out.println("========欢迎下次光临饿了么系统");
@@ -66,8 +67,10 @@ public class ElmBusiness
 
 
     }
-    private static void foodMange(int businessId){
-        //new FoodView()
+
+    private static void foodManage(Integer businessId)
+    {
+        FoodViewImpl foodView = new FoodViewImpl();
         Scanner input = new Scanner(System.in);
         int menu=0;
         while(menu!=5)
@@ -80,16 +83,16 @@ public class ElmBusiness
             switch (menu)
             {
                 case 1:
-                    System.out.println();
+                    foodView.showFoodList(businessId);
                     break;
                 case 2:
-                    System.out.println();
+                    foodView.saveFood(businessId);
                     break;
                 case 3:
-                    System.out.println();
+                    foodView.updateFood(businessId);
                     break;
                 case 4:
-                    System.out.println();
+                    foodView.removeFood(businessId);
                     break;
                 case 5:
                     System.out.println("========欢迎下次光临饿了么系统");
@@ -99,5 +102,8 @@ public class ElmBusiness
                     break;
             }
         }
-        }
+    }
+
+
+
 }

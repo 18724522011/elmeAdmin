@@ -11,4 +11,6 @@ public interface FoodDao
     public int updateFood(Food food);
     public int RemoveFood(Integer foodId);
     public Food getFoodById(Integer foodId);
+
+
 }
