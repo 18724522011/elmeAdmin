@@ -4,6 +4,7 @@ import com.company.domain.Admin;
 import com.company.domain.Business;
 import com.company.view.AdminView;
 import com.company.view.BusinessView;
+import com.company.view.FoodView;
 import com.company.view.impl.AdminViewImpl;
 import com.company.view.impl.BusinessViewImpl;
 
@@ -63,5 +64,40 @@ public class ElmBusiness
             System.out.println("账号或密码有误请重新输入");
         }
 
+
     }
+    private static void foodMange(int businessId){
+        //new FoodView()
+        Scanner input = new Scanner(System.in);
+        int menu=0;
+        while(menu!=5)
+        {
+            //创建一个菜单
+            System.out.println("========= 二级菜单（美食管理）1.查看商品列表=2.新增食品=3.修改食品=4.删除食品=5.退出系统 =========");
+            System.out.println("请输入相应的菜单编号");
+            menu = input.nextInt();
+
+            switch (menu)
+            {
+                case 1:
+                    System.out.println();
+                    break;
+                case 2:
+                    System.out.println();
+                    break;
+                case 3:
+                    System.out.println();
+                    break;
+                case 4:
+                    System.out.println();
+                    break;
+                case 5:
+                    System.out.println("========欢迎下次光临饿了么系统");
+                    break;
+                default:
+                    System.out.println("没有这个菜单项");
+                    break;
+            }
+        }
+        }
 }
