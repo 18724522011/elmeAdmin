@@ -1,6 +1,7 @@
 package com.company;
 
 import com.company.domain.Admin;
+import com.company.domain.Business;
 import com.company.view.AdminView;
 import com.company.view.BusinessView;
 import com.company.view.impl.AdminViewImpl;
@@ -8,9 +9,10 @@ import com.company.view.impl.BusinessViewImpl;
 
 import java.util.Scanner;
 
-public class ElmAdmin
+public class ElmBusiness
 {
-    public static void main(String[] args) {
+    public static void main(String[] args)
+    {
         work();
     }
     public static  void  work(){
@@ -20,20 +22,19 @@ public class ElmAdmin
         System.out.println("|\t\t\t\t饿了么控制台版后台管理系统 V1.0\t\t\t\t|");
         System.out.println("-----------------------------------------------------------");
 
-        // 调用登录方法
+        // 调用商家登录方法
 
-        AdminView adminView = new AdminViewImpl();
-        Admin admin = adminView.login();
         BusinessView businessView = new BusinessViewImpl();
-        if (admin!=null){
+        Business business = businessView.login();
+      if (business!=null){
             System.out.println("~欢迎来到饿了么商家管理系统~");
             // 创建一个菜单
             int menu=0;
             while(menu!=5){
-
-            System.out.println("========= 1.所有商家列表=2.搜索商家=3.新建商家=4.删除商家=5.退出系统 =========");
-            System.out.println("请输入相应的菜单编号");
-           menu=input.nextInt();
+                           //创建一个菜单
+                System.out.println("========= 一级菜单1.查看商家信息=2.修改商家信息=3.更新密码=4.所属商品管理=5.退出系统 =========");
+                System.out.println("请输入相应的菜单编号");
+                menu=input.nextInt();
 
                 switch (menu){
                     case 1:
@@ -43,10 +44,10 @@ public class ElmAdmin
                         businessView.listBusinessBySearch();
                         break;
                     case 3:
-                       businessView.saveBusiness();
+                        businessView.saveBusiness();
                         break;
                     case 4:
-                       businessView.removeBusiness();
+                        businessView.removeBusiness();
                         break;
                     case 5:
                         System.out.println("========欢迎下次光临饿了么系统");
