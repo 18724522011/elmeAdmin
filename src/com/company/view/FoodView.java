@@ -11,4 +11,5 @@ public interface FoodView
     public void updateFood(Integer businessId);
     public void removeFood(Integer businessId);
 
+
 }

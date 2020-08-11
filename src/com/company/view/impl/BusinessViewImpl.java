@@ -164,4 +164,32 @@ public void removeBusiness() {
             System.out.println("修改商家信息失败");
 
     }
-}
+
+    @Override
+    public void updateBusinessByPassword(Integer businessId)
+    {
+        BusinessDao dao = new BusinessDaoImpl();
+        Business business = dao.getBusinessByBusinessId(businessId);
+
+        System.out.println("\n请输入旧密码：");
+        String oldPass = input.next();
+        System.out.println("\n请输入新密码：");
+        String password = input.next();
+        System.out.println("\n请再次输入新密码：");
+        String beginPassword = input.next();
+
+        if(!business.getPassword().equals(oldPass)) {
+            System.out.println("\n旧密码输入错误！");
+        }else if(!password.equals(beginPassword)) {
+            System.out.println("\n两次输入密码不一致！");
+        }else {
+            int result = dao.updateBusinessByPassword(businessId, password);
+            if(result>0) {
+                System.out.println("\n修改密码成功！");
+            }else {
+                System.out.println("\n修改密码失败！");
+            }
+        }
+    }
+
+    }

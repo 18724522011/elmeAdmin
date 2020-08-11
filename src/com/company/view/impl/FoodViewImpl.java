@@ -1,7 +1,10 @@
 package com.company.view.impl;
 
+import com.company.dao.BusinessDao;
 import com.company.dao.FoodDao;
+import com.company.dao.Impl.BusinessDaoImpl;
 import com.company.dao.Impl.FoodDaoImpl;
+import com.company.domain.Business;
 import com.company.domain.Food;
 import com.company.view.FoodView;
 
@@ -92,6 +95,7 @@ public class FoodViewImpl implements FoodView
         }
 
     }
+
 
     @Override
     public void removeFood(Integer businessId)

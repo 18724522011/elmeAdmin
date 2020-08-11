@@ -46,7 +46,7 @@ public class ElmBusiness
                         businessView.updateBusinessInfo(business.getBusinessId());
                         break;
                     case 3:
-                        businessView.saveBusiness();
+                        businessView.updateBusinessByPassword(business.getBusinessId());
                         break;
                     case 4:
                         foodManage(business.getBusinessId());
